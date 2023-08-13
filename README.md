@@ -1,8 +1,8 @@
-# React + Vite
+# tic-tac-toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to play
+1. Go to [https://dkdk225.github.io/tic-tac-toe/](https://dkdk225.github.io/tic-tac-toe/)
+2. Generate a table.
+3. Give your table id to your friend
+4. Tell him to join you by writing that id into the box and clicking on **"join table"**
+5. Now you can enjoy a game of tic-tac-toe with your friend
