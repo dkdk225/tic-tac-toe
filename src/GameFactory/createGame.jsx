@@ -19,7 +19,7 @@ const checkWinner = function (table, turns) {
     if (table[p1] == table[p2] && table[p1] == table[p3]) return table[p1];
   }
   //if no moves left: the game can be 9 turns long at most (8 if 0 based)
-  if (turns >= 8) return "Tie";
+  if (turns > 8) return "Tie";
   return false;
 };
 
