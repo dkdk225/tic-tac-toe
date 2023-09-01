@@ -27,8 +27,7 @@ class GameFactory {
     })
   }
   generateGame() {
-    // const id = uuidv4();
-    const id = 0; //TODO: delete this id and use uuid instead
+    const id = uuidv4();
     const availableSymbols = [GameSymbols.O, GameSymbols.X];
     const random = Math.floor(Math.random() * 2);
     const availableSymbolsDB = new DB(DatabaseMap.AVAILABLE_SYMBOLS, id)

@@ -5,7 +5,7 @@ import gameFactory from "./GameFactory/GameFactory.jsx"
 
 function App(){
   const [Game, setGame] = useState(null)
-  const [id, setId] = useState(0)
+  const [id, setId] = useState("")
   return(
     <>
       {!Game &&     

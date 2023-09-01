@@ -66,6 +66,15 @@ const canBeMarked = function(hasTurn, winner, mark){
   return null
 }
 
+const copyToClipboard = async (value) =>{
+  try {
+    await navigator.clipboard.writeText(value);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+
 
 const createGame = function ({ id, symbol, tableDB }) {
   return function Game(props) {
@@ -82,7 +91,8 @@ const createGame = function ({ id, symbol, tableDB }) {
 
     return (
       <>
-        <div>Table Id: {id}</div>
+        <div>Table Id: <button onClick={()=>{copyToClipboard(id)}}>{id}</button></div>
+        
         <span>Your Symbol: {generateMark(symbol)}</span>
         <div className="table">
           {table.map((e, i) => (
