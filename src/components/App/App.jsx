@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "./App.css";
-import gameFactory from "./GameFactory/GameFactory.jsx"
+import { GameFactory } from "../Game"
 
 
 function App(){
@@ -10,9 +10,9 @@ function App(){
     <>
       {!Game &&     
         <div>
-          <button onClick={()=>{setGame(()=>gameFactory.generateGame())}}>Generate a table</button>
+          <button onClick={()=>{setGame(()=>GameFactory.generateGame())}}>Generate a table</button>
           <input type="text" value={id} onChange={(e)=>{setId(e.target.value)}} />
-          <button onClick={()=>{gameFactory.getGame(id, setGame)}}>Join a table</button>
+          <button onClick={()=>{GameFactory.getGame(id, setGame)}}>Join a table</button>
         </div>
       }
       {Game && <Game></Game>}
