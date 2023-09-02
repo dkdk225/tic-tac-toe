@@ -1,0 +1,7 @@
+.table{
+  display: flex;
+  flex-wrap: wrap;
+}
+.table__spot{
+  flex: 0 0 33.333333%;
+}

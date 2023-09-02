@@ -1,6 +1,6 @@
 import { TableState, EmptyTable, GameSymbols } from "../../game-table";
 import { useState } from "react";
-
+import "./game.css"
 
 const generateMark = function (symbol) {
   //return a mark: a component to represent the symbol in gui
