@@ -1,9 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useContext, createContext } from "react";
 import "./App.css";
 import { GameFactory } from "../Game"
+import { EventBus } from "../../event-bus"
+const EventBusContext = createContext(new EventBus())
+
 
 
 function App(){
+  const bus = useContext(EventBusContext)
   const [Game, setGame] = useState(null)
   const [id, setId] = useState("")
   return(
