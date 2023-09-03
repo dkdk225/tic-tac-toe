@@ -1,0 +1,26 @@
+:root{
+  --notification-final-opacity:0.7
+}
+
+.notification{
+  background: var(--secondary-color);
+  color: var(--white-color);
+  display: inline-flex;
+  padding: 0.5em;
+  font-size: 16px;
+  border-radius: 1em;
+  font-weight: 500;
+  animation: show-notification 0.4s;
+  vertical-align: middle;
+  opacity: var(--notification-final-opacity);
+  justify-content: center;
+}
+
+@keyframes show-notification {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: var(--notification-final-opacity);
+  }
+}
