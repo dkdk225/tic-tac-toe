@@ -23,6 +23,7 @@ const createGame = function ({ id, symbol, tableDB }) {
       new TableState({ table: EmptyTable, playerSymbol: symbol })
     );
     const winner = table.getWinner();
+    const tie = winner === 'Tie'
     const eventBus = useContext(EventBusContext);
     tableDB.listen((snapshot) => {
       const tableData = snapshot.val();
@@ -93,10 +94,18 @@ const createGame = function ({ id, symbol, tableDB }) {
           </div>
           {winner && (
             <h3 className="center-text h3 symbol-display">
-              Winner:{" "}
-              <div className="symbol-display__symbol">
-                {generateMark(winner)}
-              </div>
+              {!tie ?
+                <>
+                  Winner:{" "}
+                  <div className="symbol-display__symbol">
+                    {generateMark(winner)}
+                  </div>
+                </>
+                :
+                <>
+                  Tie
+                </>
+              }
             </h3>
           )}
           <button
