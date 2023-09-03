@@ -1,0 +1,17 @@
+
+:root{
+  --custom-x-width:100%;
+}
+
+.custom-o{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--custom-x-width);
+  height: var(--custom-x-width);
+}
+.custom-o__svg{
+  width: 80%;
+  height: 80%;
+  fill: var(--primary-color);
+}

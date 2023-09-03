@@ -3,17 +3,20 @@
 }
 
 .notification{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  z-index: 6;
   background: var(--secondary-color);
   color: var(--white-color);
-  display: inline-flex;
   padding: 0.5em;
   font-size: 16px;
   border-radius: 1em;
   font-weight: 500;
   animation: show-notification 0.4s;
-  vertical-align: middle;
   opacity: var(--notification-final-opacity);
-  justify-content: center;
 }
 
 @keyframes show-notification {
