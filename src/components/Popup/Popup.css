@@ -1,6 +1,19 @@
 .popup{
-
+  width: 30vw;
+  height: 30vw;
+  border-radius: 2em;
+  padding: 2em;
+  min-width: 15em;
+  min-height: 15em;
+  max-width: 30em;
+  max-height: 30em;
+  box-sizing: border-box;
+  box-shadow: var(--component-shadow);
+  background-color: var(--primary-background);
 }
-.popup-background{
-  
+
+.popup_close-icon{
+  position:absolute;
+  right: 0.5em;
+  top: 0.5em;
 }

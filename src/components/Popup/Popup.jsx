@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import "./Popup.css";
 import { EventBusContext } from "../App/";
+import CloseIcon from '@mui/icons-material/Close';
 
 function Popup({ children, name, className }) {
   /**
@@ -9,16 +10,18 @@ function Popup({ children, name, className }) {
    */
   const [show, setShow] = useState(false);
   const eventBus = useContext(EventBusContext);
-  console.log(eventBus)
+
+  const openEvent = "open " + name;
+  const closeEvent = "close " + name;
+  
   useEffect(() => {
-    const openEvent = "open " + name;
-    const closeEvent = "close " + name;
     eventBus.subscribe(openEvent, () => {
       setShow(true);
-      eventBus.subscribe(closeEvent, () => {
-        setShow(false);
-      });
     });
+    eventBus.subscribe(closeEvent, () => {
+      setShow(false);
+    });
+
 
     return () => {
       //remove the listeners at unmount
@@ -30,11 +33,10 @@ function Popup({ children, name, className }) {
   return (
     <>
       {show && (
-        <div className="popup-background">
           <div className={className ? `popup ${className}` : "popup"}>
             {children}
+            <CloseIcon onClick={()=>{eventBus.publish(closeEvent)}} className="icon popup_close-icon">star</CloseIcon>
           </div>
-        </div>
       )}
     </>
   );
