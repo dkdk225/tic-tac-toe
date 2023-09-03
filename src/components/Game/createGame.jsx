@@ -45,7 +45,10 @@ const createGame = function ({ id, symbol, tableDB }) {
 
     return (
       <>
-        <Notification name="clipboard" className="id-display__notification horizontal-center">
+        <Notification
+          name="clipboard"
+          className="id-display__notification horizontal-center"
+        >
           <span>Copied to clipboard</span>
         </Notification>
         <div className="game relative horizontal-center">
@@ -62,7 +65,8 @@ const createGame = function ({ id, symbol, tableDB }) {
           </div>
 
           <h3 className="center-text h3 symbol-display">
-            Your Symbol: <div className="symbol-display__symbol">{generateMark(symbol)}</div>
+            Your Symbol:{" "}
+            <div className="symbol-display__symbol">{generateMark(symbol)}</div>
           </h3>
           <div className="table relative horizontal-center">
             {table.copyTable().map((element, index) => (
@@ -87,7 +91,14 @@ const createGame = function ({ id, symbol, tableDB }) {
               </button>
             ))}
           </div>
-          {winner && <div>The winner is: {winner}</div>}
+          {winner && (
+            <h3 className="center-text h3 symbol-display">
+              Winner:{" "}
+              <div className="symbol-display__symbol">
+                {generateMark(winner)}
+              </div>
+            </h3>
+          )}
           <button
             className="button relative horizontal-center"
             onClick={() => {
