@@ -1,0 +1,96 @@
+:root{
+  --custom-stripe-height: 0.6em;
+  --stripe-horizontal-transform: translate(calc(var(--table-gap)), -50%);
+  --stripe-vertical-transform: translateY(-50%)  rotate(90deg);
+  --stripe-diagonal-align: translateX(0);
+}
+
+.custom-stripe{
+  background-color: var(--warning-color);
+  position: absolute;
+  height: var(--custom-stripe-height);
+  pointer-events: none;
+  transform-origin: 0 50%;
+  z-index: 10;
+}
+
+.stripe-direction_flat{
+  width: calc(var(--table-width) - 3*var(--table-gap));
+  max-width: calc(var(--table-max-width) - 3*var(--table-gap));
+  animation: custom-stripe-stetch_flat 0.4s;
+}
+
+
+.stripe-direction_diagonal {
+  width: calc(var(--table-width)*1.414); 
+  max-width: calc((var(--table-max-width) - 0.9em) * 1.414);
+  animation: custom-stripe-stetch_diagonal 0.4s;
+}
+
+
+/* Horizontal patterns */
+.pattern-1{
+  top: calc(16.66666% - var(--table-gap)/2);
+  transform: var(--stripe-horizontal-transform);
+}
+
+.pattern-2{
+  top: calc(50%);
+  transform: var(--stripe-horizontal-transform);
+}
+
+.pattern-3{
+  top: calc(83.333333% + var(--table-gap)/2);
+  transform: var(--stripe-horizontal-transform);
+}
+
+/* Vertical patterns */
+
+.pattern-4{
+  top: var(--table-gap);
+  left: calc(16.66666% - var(--table-gap)/2);
+  transform: var(--stripe-vertical-transform);
+}
+
+.pattern-5{
+  top: var(--table-gap);
+  left: calc(50% - var(--table-gap)/2);
+  transform: var(--stripe-vertical-transform);
+}
+
+.pattern-6{
+  top: var(--table-gap);
+  left: calc(83.333333% - var(--table-gap)/2);
+  transform: var(--stripe-vertical-transform);
+}
+
+
+/* Diagonal patterns */
+.pattern-7{
+  left: calc(var(--table-gap));
+  transform: var(--stripe-diagonal-align) rotate(45deg);
+}
+
+.pattern-8{
+  top:calc(100% - 2*var(--table-gap));
+  left:  var(--table-gap);
+  transform: var(--stripe-diagonal-align) rotate(-45deg);
+}
+
+@keyframes custom-stripe-stetch_flat {
+  from{
+    width: 0;
+  }
+  to{
+    width: calc(var(--table-width) - 3*var(--table-gap));
+  }
+}
+
+@keyframes custom-stripe-stetch_diagonal {
+  from{
+    width: 0;
+  }
+  to{
+    width: calc(var(--table-width)*1.414); 
+  }
+}

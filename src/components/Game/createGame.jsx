@@ -1,10 +1,10 @@
-import { TableState, EmptyTable, GameSymbols } from "../../game-table";
+import { TableState, EmptyTable, GameSymbols, winConditions } from "../../game-table";
 import { useState, useContext } from "react";
 import { Notification } from "../Notification";
 import "./Game.css";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { EventBusContext } from "../App";
-import { Omark, Xmark } from "./marks";
+import { Omark, Stripe, Xmark } from "./marks";
 
 const generateMark = function (symbol) {
   //return a mark: a component to represent the symbol in gui
@@ -70,6 +70,7 @@ const createGame = function ({ id, symbol, tableDB }) {
             <div className="symbol-display__symbol">{generateMark(symbol)}</div>
           </h3>
           <div className="table relative horizontal-center">
+            {(winner && !tie) && <Stripe winnerPattern={table.copyWinnerPattern()}></Stripe>}
             {table.copyTable().map((element, index) => (
               <button
                 key={index}

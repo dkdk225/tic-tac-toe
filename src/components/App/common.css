@@ -1,6 +1,7 @@
 :root {
   --primary-color: #B0816D;
   --secondary-color: #204d59;
+  --warning-color: #a11515;
   --white-color:rgba(226, 226, 228, 1);
   --primary-background:rgba(255, 255, 255, 1);
   --secondary-background:white;

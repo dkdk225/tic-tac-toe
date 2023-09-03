@@ -1,6 +1,7 @@
 :root {
   --table-width: 90vw;
   --table-max-width: 60vh;
+  --table-gap:0.3em
 }
 
 .game {
@@ -17,10 +18,10 @@
 }
 
 .table__spot {
-  flex: 0 0 calc(33.333333% - 0.3em);
+  flex: 0 0 calc(33.333333% - var(--table-gap));
   box-sizing: border-box;
-  height: calc(var(--table-width) / 3);
-  max-height: calc(var(--table-max-width) / 3);
+  height: calc(var(--table-width) / 3 - var(--table-gap));
+  max-height: calc(var(--table-max-width) / 3 - var(--table-gap));
 }
 .table__spot:hover > i > svg {
   fill: white;
