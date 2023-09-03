@@ -65,7 +65,7 @@ class TableState {
       throw Error('Marking attempt at wrong turn')
     }
     const newTable = this.#table.map((spot, spotIndex) => {
-      if (spotIndex === index && isSpotUnmarked(spot)) {
+      if (spotIndex === index && isSpotUnmarked(spot) && this.#winner === null) {
         return this.#playerSymbol;
       }
       return spot;
