@@ -60,6 +60,7 @@ html,body{
   border-radius: 0.5em;
   box-shadow: var(--element-shadow);
   transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 .button:hover{
   color: white;

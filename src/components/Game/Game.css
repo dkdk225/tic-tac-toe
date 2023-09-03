@@ -21,7 +21,6 @@
   box-sizing: border-box;
   height: calc(var(--table-width) / 3);
   max-height: calc(var(--table-max-width) / 3);
-  -webkit-tap-highlight-color: transparent;
 }
 .table__spot:hover > i > svg {
   fill: white;
