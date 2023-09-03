@@ -40,6 +40,11 @@ const getPlayingSymbol = function (turn) {
   return GameSymbols.O
 }
 
+const isSpotUnmarked = (spot) =>{
+  if(!(spot === 'x' || spot === 'o'))
+    return true
+  return false
+}
 
 class TableState {
   #table;
@@ -60,7 +65,7 @@ class TableState {
       throw Error('Marking attempt at wrong turn')
     }
     const newTable = this.#table.map((spot, spotIndex) => {
-      if (spotIndex === index) {
+      if (spotIndex === index && isSpotUnmarked(spot)) {
         return this.#playerSymbol;
       }
       return spot;

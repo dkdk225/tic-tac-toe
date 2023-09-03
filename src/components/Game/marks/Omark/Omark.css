@@ -1,0 +1,48 @@
+
+:root{
+  --custom-x-width:100%;
+  --animation-component-final-position: translateY(120%);
+}
+
+.custom-o{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--custom-x-width);
+  height: var(--custom-x-width);
+  overflow: hidden;
+}
+
+.custom-o::after{
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  background-color: var(--primary-background);
+  content: '';
+  position: absolute;
+  transform: var(--animation-component-final-position);
+  animation: custom-o-animation 0.6s ;
+}
+
+.custom-o:hover::after{
+  transition: 0s;
+  background-color: var(--primary-color);
+}
+
+
+@keyframes custom-o-animation {
+  /* provided by moving the after component away revealing the component itself */
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: var(--animation-component-final-position);
+  }
+}
+
+.custom-o__svg{
+  width: 80%;
+  height: 80%;
+  fill: var(--primary-color);
+}

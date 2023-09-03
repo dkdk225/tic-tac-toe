@@ -1,0 +1,71 @@
+:root {
+  --table-width: 90vw;
+  --table-max-width: 60vh;
+}
+
+.game {
+  min-height: 100%;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--table-width);
+  max-width: var(--table-max-width);
+  gap: 0.3em;
+  margin-bottom: 2em;
+}
+
+.table__spot {
+  flex: 0 0 calc(33.333333% - 0.3em);
+  box-sizing: border-box;
+  height: calc(var(--table-width) / 3);
+  max-height: calc(var(--table-max-width) / 3);
+}
+.table__spot:hover > i > svg {
+  fill: white;
+}
+
+.id-display {
+  margin: 1em 0em 3em 0em;
+}
+
+.id-display__h3 {
+  margin-right: 1em;
+}
+
+.symbol-display__symbol {
+  display: inline-block;
+  margin-left: 0.3em;
+  width: 2em;
+  height: 2em;
+}
+.symbol-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.id-display__notification {
+  position: fixed;
+  bottom: 2em;
+}
+
+@media (width > 500px) {
+  :root {
+    --table-width: 50vw;
+  }
+}
+
+@media (width < 1000px) {
+  .game {
+    width: var(--table-width);
+    max-width: var(--table-max-width);
+  }
+}
+
+@media (width > 1000px) {
+  .id-display{
+    margin-left: 1em;
+  }
+}
